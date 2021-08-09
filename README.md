@@ -30,3 +30,9 @@ Then, run your test script
 ```bash
 pytest -xv test_hello.py
 ```
+
+## Other Resources
+Practice challenges:
+```buildoutcfg
+https://pythonprinciples.com/challenges/
+```
