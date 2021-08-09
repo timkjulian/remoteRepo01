@@ -58,7 +58,15 @@ def main():
     """Make your noise here"""
     # run_take()
     # run_distinct()
-    run_pipeline()
+    # run_pipeline()
+
+    # Generators: (expr(item) for item in iterable)
+    # Task: Calculate the sum of the first 1 thousand square numbers
+    m_sq = (x*x for x in range(1, 1000001))   # Save memory
+    l_sq = list(m_sq)
+    # l_sq = [x*x for x in range(1, 1000001)] # Comprehension
+    print(f'The sum of the first 1000 square numbers is: {sum(l_sq)}')
+
 
 
 # --------------------------------------------------
