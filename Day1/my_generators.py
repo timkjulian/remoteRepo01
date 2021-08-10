@@ -6,6 +6,19 @@ Purpose:
 """
 
 
+def fibo():
+    """Fibo series"""
+    numbers = []
+    while True:
+        if len(numbers) < 2:
+            numbers.append(1)
+        else:
+            numbers.append(sum(numbers))
+            numbers.pop(0)
+        yield numbers[-1]
+        continue
+
+
 def gen246():
     print('About to yield 2')
     yield 2
@@ -29,6 +42,7 @@ def first(iterable):
     except StopIteration:
         raise ValueError('Iterable is empty')
 
+
 # --------------------------------------------------
 def main():
     """Review Iterator and Generators"""
@@ -38,9 +52,8 @@ def main():
     # print(first(iterable))
     # g = gen123()
     # print(type(g))
-    # for v in gen123():
-    #     print(f'Value is {v}')
-
+    for v in gen123():
+        print(f'Value is {v}')
 
 
 # --------------------------------------------------
