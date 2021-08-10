@@ -6,7 +6,6 @@ Purpose:
 """
 
 from math import sqrt
-from pprint import pprint as pp
 
 def is_prime(x):
     """
