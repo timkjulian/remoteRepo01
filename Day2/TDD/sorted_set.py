@@ -15,6 +15,10 @@ class SortedSet:
         """
         self._items = sorted(items) if items is not None else []
 
+    def __contains__(self, item):
+        """Container Protocol"""
+        return item in self._items
+
 
 # --------------------------------------------------
 def main():
