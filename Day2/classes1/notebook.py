@@ -33,16 +33,15 @@ class Notebook:
 
     def __init__(self):
         """Initialize a notebook with an empty list."""
-        pass
+        self._notes = []
 
     def new_note(self, memo, tags=""):
         """Create a new note and add it to the list."""
-        pass
+        self._notes.append(Note(memo, tags))
 
     def _find_note(self, note_id):
         """Locate the note with the given id."""
         pass
-
 
     def modify_memo(self, note_id, memo):
         """Find the note with the given id and change its
@@ -57,16 +56,25 @@ class Notebook:
     def search(self, filter):
         """Find all notes that match the given filter
         string."""
-        pass
+        return [note for note in self._notes
+                if note.match(filter)]
 
 
 def main():
-    n1 = Note('hello first')
-    n2 = Note('hello again', 'hi')
-    print(n1._id, n1._memo)
-    print(n2._id, n2._memo)
-    print(n1.match('hello'))
-    print(n2.match('hi'))
+    # n1 = Note('hello first')
+    # n2 = Note('hello again', 'hi')
+    # print(n1._id, n1._memo)
+    # print(n2._id, n2._memo)
+    # print(n1.match('hello'))
+    # print(n2.match('hi'))
+    n = Notebook()
+    n.new_note('hello world')
+    n.new_note('hello again')
+    print(n._notes)
+    print(n._notes[0]._id)
+    print(n._notes[0]._memo)
+    print(n.search('hello'))
+    print(n.search('world'))
 
 
 if __name__ == '__main__':
