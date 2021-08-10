@@ -23,11 +23,16 @@ class SortedSet:
         """Length protocol"""
         return len(self._items)
 
+    def __iter__(self):
+        return iter(self._items)
+
+    def __getitem__(self, index):
+        return self._items[index]
+
 # --------------------------------------------------
 def main():
     """Make your noise here"""
     pass
-
 
 
 # --------------------------------------------------
