@@ -64,6 +64,9 @@ def test_lambda():
                  'Dimitri Mendeleev',
                  'Charles Darwin',
                  'Isaac Newton']
+    # Print sorting by first name
+    # pp(sorted(scientist))
+
     # Call built-in sorted() with a lambda def
     # Print sorting by last name
     pp(sorted(scientist, key=lambda name: name.split()[-1]))
