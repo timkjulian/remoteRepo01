@@ -34,7 +34,9 @@ def write_sequence(filename, num):
     """
     f = open(filename, mode='wt', encoding='utf-8')
     # Generate list and Write list
-    f.writelines('{0}\n'.format(r)
+    # f.writelines('{0}\n'.format(r)
+    #              for r in islice(sequence(), num + 1))
+    f.writelines(f'{r}\n'
                  for r in islice(sequence(), num + 1))
     f.close()
 
