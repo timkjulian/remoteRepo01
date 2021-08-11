@@ -5,6 +5,7 @@ Date   : 8/11/2021
 Purpose: Discuss callable objects, callable instances and lambdas
 """
 import socket
+from pprint import pp
 
 
 class Resolver:
@@ -56,15 +57,27 @@ def test_sequence_class():
     print(type(t))
 
 
+def test_lambda():
+    scientist = ['Marie Curie',
+                 'Albert Einstein',
+                 'Niel Bohr',
+                 'Dimitri Mendeleev',
+                 'Charles Darwin',
+                 'Isaac Newton']
+    # Call built-in sorted() with a lambda def
+    # Print sorting by last name
+    pp(sorted(scientist, key=lambda name: name.split()[-1]))
+
+
+def last_name(name):
+    return name.split()[-1]
+
 # --------------------------------------------------
 def main():
     """Make your noise here"""
     # test_Resolver()
-
-    test_sequence_class()
-
-
-
+    # test_sequence_class()
+    test_lambda()
 
 
 # --------------------------------------------------
