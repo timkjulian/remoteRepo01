@@ -7,6 +7,18 @@ Purpose: Review Exceptions
 from random import randrange
 
 
+def more_info():
+    try:
+        b'\x81'.decode('utf-8')
+    except UnicodeError as e:
+        print(e)
+        print(f'encoding: {e.encoding}')
+        print(f'reason: {e.reason}')
+        print(f'object: {e.object}')
+        print(f'start: {e.start}')
+        print(f'end: {e.end}')
+
+
 def median(iterable):
     """
     Obtain the central value of a series.
@@ -73,4 +85,5 @@ def main():
 if __name__ == '__main__':
     # main()
     # lookups()
-    test_median()
+    # test_median()
+    more_info()
