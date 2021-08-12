@@ -24,6 +24,20 @@ def print_args(arg1, arg2, *args, kwarg1, kwarg2, **kwargs):
     print(kwarg2)
     print(kwargs)
 
+
+def print_pos_args(arg1, arg2, *args):
+    print(arg1)
+    print(arg2)
+    print(args)
+
+
+def colors(red, blue, green, **kwargs):
+    print(f'r = {red}')
+    print(f'b = {blue}')
+    print(f'g = {green}')
+    print(kwargs)
+
+
 # --------------------------------------------------
 def main():
     """Make your noise here"""
@@ -32,6 +46,18 @@ def main():
     print_args(1, 2, 3, 4,
                kwarg1='hello', kwarg2='there',
                fname='Waldo', lname='Weber')    # two optional positional and keyword params
+
+    t = (11, 22, 33, 44, 55, 66)
+    print_pos_args(t, t) # passing two required positional arguments
+    # Unpack the collection with '*'
+    # *t does not corresponds to *args
+    print_pos_args(*t)
+    print_pos_args(t[0], t[1], t[2:])
+    # To unpack a dictionary use: '**'
+    k = {'red': 21, 'green': 120, 'blue':68, 'alpha': 52}
+    colors(**k)
+
+
 
 
 
