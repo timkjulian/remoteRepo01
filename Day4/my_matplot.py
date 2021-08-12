@@ -55,7 +55,27 @@ def continent_data(data):
     # Print number of countries per continent
     print(f'Asia countries: {len(set(asia_2007.country))}')
     print(f'Europe countries: {len(set(europe_2007.country))}')
+    # Get mean and median
+    print(f'Mean GDP in Asia {asia_2007.gdpPerCapita.mean()}')
+    print(f'Median GDP in Asia {asia_2007.gdpPerCapita.median()}')
+    print(f'Mean GDP in Europe {europe_2007.gdpPerCapita.mean()}')
+    print(f'Median GDP in Europe {europe_2007.gdpPerCapita.median()}')
+    # make subplots
+    plt.subplot(2, 1, 1)
+    plt.title('Distribution of GDP Per Capita')
+    plt.hist(asia_2007.gdpPerCapita, 20, range=(0, 50000), edgecolor='black')
+    plt.ylabel('Asia')
+    plt.subplot(2, 1, 2)
+    plt.hist(europe_2007.gdpPerCapita, 20, range=(0, 50000), edgecolor='black')
+    plt.ylabel('Europe')
+    plt.show()
 
+
+
+def continent_data_le(data):
+    '''Compare the life expectancy distribution between
+    Europe and America in 1997'''
+    pass
 
 # --------------------------------------------------
 def main():
