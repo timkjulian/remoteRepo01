@@ -99,8 +99,20 @@ def continent_data_le(data):
 
 
 def continent_data_gdp_growth(data):
-    pass
+    usa = data[data.country == 'United States']
+    china = data[data.country == 'China']
+    # Calculate growth
+    usa_growth = usa.gdpPerCapita / usa.gdpPerCapita.iloc[0]*100
+    china_growth = china.gdpPerCapita / china.gdpPerCapita.iloc[0]*100
 
+    plt.title('GDP per Capita Growth (first year = 100')
+    plt.plot(usa.year, usa_growth)
+    plt.plot(china.year, china_growth)
+    plt.legend(['United States', 'China'])
+    plt.xlabel('year')
+    plt.ylabel('GDP per capita growth')
+
+    plt.show()
 
 # --------------------------------------------------
 def main():
