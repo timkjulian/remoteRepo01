@@ -34,14 +34,50 @@ def np_arrays():
     print(array_nd)
 
 
+def np_print_arrays():
+    c = np.arange(24).reshape(2, 3, 4)
+    print(c)
+    # "Pretty print" in numpy
+    print(np.arange(10000))
+    print(np.arange(10000).reshape(100, 100)) # also in reshaping
 
 
+def np_arithmetic_operations():
+    a = np.array([10, 10, 10])
+    b = np.array([5, 5, 5])
+    # Simple operations
+    print(a + b)
+    print(a - b)
+    print(a * b)
+    print(a // b)
+    print(a % 3)
+    print(a < 20)
+    print(a ** 2)
+    # Dot Function
+    A = np.array([[1, 1], [0, 1]])   # 2D [[ ]]
+    B = np.array([[2, 0], [3, 4]])
+    print(f'A:{A}')
+    print(f'B:{B}')
+    print(f'Multiplication: {A*B}')
+    print(f'Dot {A.dot(B)}')
+    print(f'Dot {np.dot(A,B)}')
+    # Modify existing arrays
+    print(a)
+    a *= 3
+    print(a)
+    # Unary operators
+    ages = np.array([12, 15, 18, 20])
+    print(f'Sum: {ages.sum()}')
+    print(f'Min: {ages.min()}')
+    print(f'Max: {ages.max()}')
 
 
 # --------------------------------------------------
 def main():
     """Make your noise here"""
-    np_arrays()
+    # np_arrays()
+    # np_print_arrays()
+    np_arithmetic_operations()
 
 
 
