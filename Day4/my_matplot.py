@@ -75,7 +75,32 @@ def continent_data(data):
 def continent_data_le(data):
     '''Compare the life expectancy distribution between
     Europe and America in 1997'''
+    # Get the data for 1997
+    data_1997 = data[data.year == 1997]
+    # Get data for America  and  Europe
+    americas_1997 = data_1997[data_1997.continent == 'Americas']
+    europe_1997 = data_1997[data_1997.continent == 'Europe']
+    # Print mean and median
+    print(f'Mean GDP in America {americas_1997.lifeExpectancy.mean()}')
+    print(f'Median GDP in America {americas_1997.lifeExpectancy.median()}')
+    print(f'Mean GDP in Europe {europe_1997.lifeExpectancy.mean()}')
+    print(f'Median GDP in Europe {europe_1997.lifeExpectancy.median()}')
+    # Plot data
+    bins = 20
+    plt.subplot(211)
+    plt.title('Distribution of life expectancy')
+    plt.hist(americas_1997.lifeExpectancy, bins, range=(55, 85), edgecolor='black')
+    plt.ylabel('America')
+    plt.subplot(212)
+    plt.title('Distribution of life expectancy')
+    plt.hist(europe_1997.lifeExpectancy, bins, range=(55, 85), edgecolor='black')
+    plt.ylabel('Europe')
+    plt.show()
+
+
+def continent_data_gdp_growth(data):
     pass
+
 
 # --------------------------------------------------
 def main():
@@ -83,7 +108,9 @@ def main():
     # first_pandas()
     data = pd.read_csv('countries.csv')
     # import_data_pandas(data)
-    continent_data(data)
+    # continent_data(data)
+    # continent_data_le(data)
+    continent_data_gdp_growth(data)
 
 
 # --------------------------------------------------
